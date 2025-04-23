@@ -3,5 +3,38 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "honey-core": {
+      "projectType": "library",
+      "root": "projects/honey-core",
+      "sourceRoot": "projects/honey-core/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/honey-core/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/honey-core/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/honey-core/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/honey-core/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
   }
 }

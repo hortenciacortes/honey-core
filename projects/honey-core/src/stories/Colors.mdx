@@ -1,0 +1,40 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+
+<Meta title="Colors" />
+
+<ColorPalette>
+  <ColorItem 
+    title="theme.color.primary" 
+    subtitle="Honey Core" 
+    colors={{ 
+    	'--hc-primary-500': '#F55638',
+			'--hc-primary-600': '#F57738',
+			'--hc-primary-700': '#F59838',
+		}} 
+  />
+  <ColorItem 
+    title="theme.color.secondary" 
+    subtitle="Honey Core Secondary" 
+    colors={{ 
+			'--hc-secondary-500': '#FFC857',
+			'--hc-secondary-600': '#f7a838',
+			'--hc-secondary-700': '#d68d2a',
+		}} 
+  />
+  <ColorItem 
+    title="theme.color.brown" 
+    subtitle="Honey Core Secondary" 
+    colors={{ 
+			'--hc-brown-500': '#95570e',
+			'--hc-brown-600': '#753c00',
+		}} 
+  />
+  <ColorItem
+    title="theme.color.greyscale"
+    subtitle="Some of the greys"
+    colors={{
+			'--hc-text-strong': '#2E282A',
+			'--hc-text-light': '#6C757D',
+		}}
+  />
+</ColorPalette>

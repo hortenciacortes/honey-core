@@ -1,5 +1,5 @@
 {
-  "name": "honey-core",
+  "name": "@hmsc/honey-core",
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
@@ -10,7 +10,7 @@
     "storybook": "ng run honey-core:storybook",
     "build-storybook": "ng run honey-core:build-storybook"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/common": "^19.2.0",
     "@angular/compiler": "^19.2.0",

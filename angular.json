@@ -40,7 +40,10 @@
             "configDir": "projects/honey-core/.storybook",
             "browserTarget": "honey-core:build",
             "compodoc": false,
-            "port": 6006
+            "port": 6006,
+            "styles": [
+              "projects/honey-core/src/styles/variables.scss"
+            ]
           }
         },
         "build-storybook": {

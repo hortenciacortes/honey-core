@@ -1,24 +1,16 @@
-import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'storybook-button',
+  selector: 'hc-button',
+  templateUrl: './button.component.html',
+  styleUrl: './button.component.scss',
+  imports: [],
   standalone: true,
-  imports: [CommonModule],
-  template: ` <button
-  type="button"
-  (click)="onClick.emit($event)"
-  [ngClass]="classes"
-  [ngStyle]="{ 'background-color': backgroundColor }"
->
-  {{ label }}
-</button>`,
-  styleUrls: ['./button.css'],
 })
 export class ButtonComponent {
   /** Is this the principal call to action on the page? */
   @Input()
-  primary = false;
+  variant: 'primary' | 'secondary'  = 'primary';
 
   /** What background color to use */
   @Input()
@@ -36,13 +28,17 @@ export class ButtonComponent {
   @Input()
   label = 'Button';
 
+  /**
+   * Disabled state of the button
+   */
+  @Input()
+  disabled = false;
+
   /** Optional click handler */
   @Output()
   onClick = new EventEmitter<Event>();
 
   public get classes(): string[] {
-    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-
-    return ['storybook-button', `storybook-button--${this.size}`, mode];
+    return ['hc-button', `hc-${this.size}`, `hc-${this.variant}`];
   }
 }

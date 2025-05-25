@@ -1,8 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ButtonComponent } from './button.component';
 import type { User } from './user';
+import { ButtonComponent } from '../lib/components/button/button.component';
 
 @Component({
   selector: 'storybook-header',
@@ -32,29 +32,28 @@ import type { User } from './user';
           Welcome, <b>{{ user.name }}</b
           >!
         </span>
-        <storybook-button
+        <hc-button
           *ngIf="user"
           size="small"
           (onClick)="onLogout.emit($event)"
           label="Log out"
-        ></storybook-button>
+        ></hc-button>
       </div>
       <div *ngIf="!user">
-        <storybook-button
+        <hc-button
           *ngIf="!user"
           size="small"
           class="margin-left"
           (onClick)="onLogin.emit($event)"
           label="Log in"
-        ></storybook-button>
-        <storybook-button
+        ></hc-button>
+        <hc-button
           *ngIf="!user"
           size="small"
-          [primary]="true"
           class="margin-left"
           (onClick)="onCreateAccount.emit($event)"
           label="Sign up"
-        ></storybook-button>
+        ></hc-button>
       </div>
     </div>
   </div>

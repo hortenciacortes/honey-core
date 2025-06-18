@@ -1,3 +1,4 @@
+import '../projects/honey-core/src/lib/styles/variables.css'; 
 import type { Preview } from '@storybook/angular'
 
 const preview: Preview = {

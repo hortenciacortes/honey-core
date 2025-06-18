@@ -1,5 +1,5 @@
 {
-  "name": "honey-core",
+  "name": "@hmscodes/honey-core",
   "version": "1.0.4",
   "peerDependencies": {
     "@angular/common": "^19.2.0",

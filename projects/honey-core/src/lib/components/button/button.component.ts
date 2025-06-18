@@ -7,7 +7,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   imports: [],
   standalone: true,
 })
-export class ButtonComponent {
+export class HcButtonComponent {
   /** Is this the principal call to action on the page? */
   @Input()
   variant: 'primary' | 'secondary'  = 'primary';

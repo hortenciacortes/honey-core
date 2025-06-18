@@ -1,13 +1,13 @@
 import { argsToTemplate, type Meta, type StoryObj } from '@storybook/angular';
 import { fn } from '@storybook/test';
-import { ButtonComponent } from '../lib/components/button/button.component';
+import { HcButtonComponent } from '../lib/components/button/button.component';
 
-type ButtonInputsAndCustomArgs = ButtonComponent & { text: string };
+type ButtonInputsAndCustomArgs = HcButtonComponent & { text: string };
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta<ButtonInputsAndCustomArgs> = {
   title: 'Example/Button',
-  component: ButtonComponent,
+  component: HcButtonComponent,
   tags: ['autodocs'],
   args: {
     text: 'Button',
@@ -23,7 +23,7 @@ const meta: Meta<ButtonInputsAndCustomArgs> = {
 };
 
 export default meta;
-type Story = StoryObj<ButtonComponent>;
+type Story = StoryObj<HcButtonComponent>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {

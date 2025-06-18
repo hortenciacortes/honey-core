@@ -2,12 +2,12 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import type { User } from './user';
-import { ButtonComponent } from '../lib/components/button/button.component';
+import { HcButtonComponent } from '../lib/components/button/button.component';
 
 @Component({
   selector: 'storybook-header',
   standalone: true,
-  imports: [CommonModule, ButtonComponent],
+  imports: [CommonModule, HcButtonComponent],
   template: `<header>
   <div class="storybook-header">
     <div>
@@ -36,8 +36,7 @@ import { ButtonComponent } from '../lib/components/button/button.component';
           *ngIf="user"
           size="small"
           (onClick)="onLogout.emit($event)"
-          label="Log out"
-        ></hc-button>
+        >Log out</hc-button>
       </div>
       <div *ngIf="!user">
         <hc-button

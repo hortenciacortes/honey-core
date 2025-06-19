@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/@hmscodes/honey-core",
+  "dest": "../../dist/honey-core",
   "assets": ["styles/variables.css"],
   "lib": {
     "entryFile": "src/public-api.ts"

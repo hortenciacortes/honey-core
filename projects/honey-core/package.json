@@ -1,6 +1,14 @@
 {
   "name": "@hmscodes/honey-core",
-  "version": "1.0.5",
+  "version": "1.0.6",
+  "exports": {
+    "./styles/variables.css": {
+      "default": "./styles/variables.css"
+    },
+    "./": {
+      "default": "./"
+    }
+  },
   "peerDependencies": {
     "@angular/common": "^19.2.0",
     "@angular/core": "^19.2.0"

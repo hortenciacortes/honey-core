@@ -1,7 +1,7 @@
 :root {
-    --hc-primary-500                : #F55638;
-    --hc-primary-600                : #F57738;
-    --hc-primary-700                : #F59838;
+    --hc-primary-500                : #FF7A00;
+    --hc-primary-600                : #E86B00;
+    --hc-primary-700                : #CC5D00;
     --hc-secondary-500              : #FFC857;
     --hc-secondary-600              : #f7a838;
     --hc-secondary-700              : #d68d2a;
@@ -10,6 +10,7 @@
     --hc-text-strong                : #2E282A;
     --hc-text-light                 : #6C757D;
 
+    --hc-background-main            : #FFFFFF; 
     --hc-disabled-bg                : #c7c7c7;
     --hc-disabled-text              : #6C757D;
     --hc-background-primary         : var(--hc-primary-500);

@@ -42,7 +42,7 @@
             "compodoc": false,
             "port": 6006,
             "styles": [
-              "projects/honey-core/src/styles/variables.css"
+              "projects/honey-core/styles/variables.css"
             ]
           }
         },

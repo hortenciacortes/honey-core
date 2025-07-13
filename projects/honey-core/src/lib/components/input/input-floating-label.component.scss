@@ -1,0 +1,37 @@
+.hc-input {
+  position: relative;
+  border: none;
+  padding: 0;
+  margin: 1rem 0;
+
+  input {
+    width: 100%;
+    padding: 1.2rem 0.8rem 0.4rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+    &:focus {
+      outline: none;
+      border-color: var(--hc-primary-500);
+    }
+
+    &:focus + label,
+    &:not(:placeholder-shown) + label {
+      transform: translateY(-1rem);
+      font-size: 0.75rem;
+      color: var(--hc-primary-500);
+    }
+  }
+
+  label {
+    position: absolute;
+    left: 0.8rem;
+    top: 1rem;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    color: #666;
+    background-color: white;
+    padding: 0 0.2rem;
+  }
+}

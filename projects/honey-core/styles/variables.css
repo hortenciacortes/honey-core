@@ -15,5 +15,7 @@
     --hc-disabled-text              : #6C757D;
     --hc-background-primary         : var(--hc-primary-500);
     --hc-background-primary-hover   : var(--hc-primary-600);
+    --hc-background-secondary         : var(--hc-secondary-500);
+    --hc-background-secondary-hover   : var(--hc-secondary-600);
 }
   

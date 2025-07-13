@@ -8,17 +8,17 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   standalone: true,
 })
 export class HcButtonComponent {
-  /** Is this the principal call to action on the page? */
+  /** Style of the button */
   @Input()
-  variant: 'primary' | 'secondary'  = 'primary';
+  style: 's-solid' | 's-hollow' | 's-plain'  = 's-solid';
 
-  /** What background color to use */
+  /** What color to use for the button */
   @Input()
-  backgroundColor?: string;
+  color?: string = 'c-primary';
 
-  /** How large should the button be? */
+  /** Size of the button */
   @Input()
-  size: 'small' | 'medium' | 'large' = 'medium';
+  size?: 'h-small' | 'w-stretch' | null = null;
 
   /**
    * Button contents
@@ -39,6 +39,6 @@ export class HcButtonComponent {
   onClick = new EventEmitter<Event>();
 
   public get classes(): string[] {
-    return ['hc-button', `hc-${this.size}`, `hc-${this.variant}`];
+    return ['hc-button', `${this.size}`, `${this.style}`, `${this.color}`];
   }
 }

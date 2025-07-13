@@ -28,40 +28,46 @@ type Story = StoryObj<HcButtonComponent>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-    variant: 'primary',
+    style: 's-solid',
   },
 };
 
 export const PrimaryDisabled: Story = {
   args: {
-    variant: 'primary',
+    ...Primary.args,
     disabled: true,
   },
 };
 
-export const Secondary: Story = {
+export const SecondarySolid: Story = {
   args: {
-    variant: 'secondary',
+    style: 's-solid',
+    color: 'c-secondary',
   },
 };
 
-export const Large: Story = {
+export const Hollow: Story = {
   args: {
-    variant: 'primary',
-    size: 'large',
+    style: 's-hollow',
   },
 };
 
-export const Medium: Story = {
+export const Plain: Story = {
   args: {
-    variant: 'primary',
-    size: 'medium',
+    style: 's-plain',
   },
 };
 
 export const Small: Story = {
   args: {
-    variant: 'primary',
-    size: 'small',
+    ...Primary.args,
+    size: 'h-small',
+  },
+};
+
+export const Stretch: Story = {
+  args: {
+    ...Primary.args,
+    size: 'w-stretch',
   },
 };

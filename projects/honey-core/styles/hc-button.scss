@@ -1,0 +1,174 @@
+$hcButtonBorderRadius  : 12px !default;
+$hcButtonFontSize      : 14px !default;
+$hcButtonFontWeight    : normal !default;
+$hcButtonPadding       : 24px !default;
+
+/**
+ * Applies colors to the button
+ */
+@mixin colorButton($color, $background, $border) {
+  color                 : $color;
+  background            : $background;
+  border-color          : $border;
+}
+
+/**
+ * 
+ */
+@mixin hcTypography($size, $color, $weight: normal) {
+  font-size             : $size;
+  color                 : $color;
+  font-weight           : $weight;
+}
+
+/**
+ * 
+ */
+@mixin flex($justify, $align: center) {
+  display               : flex;
+  align-items           : $align;
+  justify-content       : $justify;
+}
+
+/**
+ * Base shared properties for hc-button styles
+ */
+%hc-button {
+  --color-button        : var(--color);
+  --color-button-hover  : var(--hover-color);
+  --width               : fit-content;
+  --height              : 36px;
+  --h-padding           : #{$hcButtonPadding};
+
+  @include flex(center);
+  @include hcTypography($hcButtonFontSize, var(--color-button), $hcButtonFontWeight);
+  gap                   : 8px;
+  box-sizing            : border-box;
+  width                 : var(--width);
+  height                : var(--height);
+  padding               : 0px var(--h-padding);
+  white-space           : nowrap;
+  outline               : none;
+  border                : 1px solid transparent;
+  border-radius         : $hcButtonBorderRadius;
+  transition            : background .2s, color .2s, box-shadow .2s;
+  cursor                : pointer;
+
+  &:disabled {
+    @include colorButton(var(--hc-disabled-text), var(--hc-disabled-bg), var(--hc-disabled-bg));
+    cursor              : not-allowed;
+  }
+}
+
+/**
+ * Base colors
+ */
+.hc-button {
+  &.c-initial {
+    --color-button        : var(--hc-text-strong);
+    --color-button-hover  : var(--hc-text-strong);
+  }
+
+  &.c-primary {
+    --color-button        : var(--hc-background-primary);
+    --color-button-hover  : var(--hc-background-primary-hover);
+  }
+
+  &.c-secondary {
+    color                 : var(--hc-brown-600) !important;
+    --color-button        : var(--hc-background-secondary);
+    --color-button-hover    : var(--hc-background-secondary-hover);
+  }
+}
+
+
+/**
+ * Solid colored background button
+ */
+.hc-button.s-solid {
+  @extend %hc-button;
+  @include colorButton(var(--hc-background-main), var(--color-button), transparent);
+
+  &:not(:disabled):hover {
+    background          : var(--color-button-hover);
+  }
+}
+
+/**
+ * Hollow button with colored border and text
+ */
+.hc-button.s-hollow {
+  @extend %hc-button;
+  @include colorButton(var(--color-button), transparent, var(--color-button));
+
+  &:not(:disabled):hover {
+    @include colorButton(var(--hc-background-main), var(--color-button), transparent);
+  }
+
+  &:disabled {
+    background          : transparent;
+    color               : var(--cds-text-light)
+  }
+}
+
+/**
+ *  Text button
+ */
+.hc-button.s-plain {
+  --height              : 28px;
+  --h-padding           : 16px;
+
+  @extend %hc-button;
+  @include colorButton(var(--color-button), transparent, transparent);
+
+  &:not(:disabled):hover {
+    @include colorButton(var(--color-button-hover), transparent, transparent);
+  }
+
+  &:disabled {
+    @include colorButton(var(--hc-button-disabled-foreground), transparent, transparent);
+  }
+}
+
+/**
+ * hc-button width classes
+ */
+.hc-button {
+  &.v-underlined {
+    text-decoration     : underline;
+  }
+
+  &.h-small {
+    --height            : 32px;
+    --h-padding         : 16px;
+    font-size           : 12px;
+  }
+
+  &.w-stretch {
+    --width             : 100%;
+  }
+}
+
+/**
+ * Overwrite buttons style on dark mode
+ */
+:root body[cds-theme='dark'] {
+  .s-solid {
+    &:disabled {
+      background        : hsla(var(--cds-primary-500-hsl), 0.5);
+    }
+  }
+
+  .hc-primary {
+    &:disabled {
+      @include colorButton(hsla(var(--cds-primary-400-hsl), 0.5), transparent, hsla(var(--cds-primary-400-hsl), 0.5));
+    }
+  }
+
+  .hc-button.s-solid {
+    &:disabled {
+      background        : hsla(var(--color-button-hsl), 0.5);
+      border-color      : transparent;
+    }
+  }
+}

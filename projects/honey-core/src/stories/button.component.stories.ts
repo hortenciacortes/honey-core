@@ -12,7 +12,7 @@ const meta: Meta<ButtonInputsAndCustomArgs> = {
   args: {
     text: 'Button',
   },
-  render: ({ text, ...buttonArgs }) => ({
+  render: ({ text, ...buttonArgs }: { text: string; [key: string]: any }) => ({
     props: buttonArgs,
     template: `
         <hc-button ${argsToTemplate(buttonArgs)}>

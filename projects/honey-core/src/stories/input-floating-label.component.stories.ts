@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/angular';
 import { InputFloatingLabelComponent } from '../lib/components/input/input-floating-label.component';
+import { UntypedFormControl } from '@angular/forms';
 
 const meta: Meta<InputFloatingLabelComponent> = {
   title: 'Form/Input Floating Label',
@@ -19,5 +20,6 @@ export const Default: Story = {
     label: 'Nome completo',
     id: 'nome',
     required: true,
+    control: new UntypedFormControl('text-stories'),
   },
 };

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule, UntypedFormControl } from '@angular/forms';
 
 @Component({
   selector: 'hc-input-floating-label',
@@ -9,10 +9,10 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
   standalone: true,
 })
 export class InputFloatingLabelComponent {
-  @Input() id: string = 'hc-input';
-  @Input() label: string = 'Label';
-  @Input() type: string = 'text';
+  @Input() id = 'hc-input';
+  @Input() label = 'Label';
+  @Input() type = 'text';
   @Input() required = false;
-  @Input() control!: FormControl;
+  @Input() control: FormControl = new UntypedFormControl('');
 }
 

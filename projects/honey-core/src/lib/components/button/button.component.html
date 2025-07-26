@@ -5,7 +5,7 @@
   [disabled]="loading ? true : disabled"
   (click)="onClick.emit($event)"
 >
-@if (!loading) {
-  <ng-content />
-}
+  @if (!loading) {
+    <ng-content />
+  }
 </button>

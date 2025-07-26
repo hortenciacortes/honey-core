@@ -1,0 +1,23 @@
+<fieldset class="hc-input hc-input-dropdown">
+  <input
+    type="text"
+    placeholder=" "
+    autocomplete="off"
+    [id]="id"
+    [formControl]="control"
+    (focus)="filterOptions()"
+    (input)="filterOptions()"
+  />
+  <label [for]="id">{{ label }}</label>
+
+  @if (showOptions && filteredOptions.length) {
+    <ul class="dropdown-options">
+      @for (option of filteredOptions; track $index) {
+        <li (click)="selectOption(option)">
+          {{ option }}
+        </li>
+      }
+    </ul>
+  }
+</fieldset>
+

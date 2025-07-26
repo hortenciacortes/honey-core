@@ -1,6 +1,6 @@
 {
   "name": "@hmscodes/honey-core",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "exports": {
     "./styles/variables.css": {
       "default": "./styles/variables.css"

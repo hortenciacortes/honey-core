@@ -16,7 +16,7 @@ const meta: Meta<ButtonInputsAndCustomArgs> = {
     props: buttonArgs,
     template: `
         <hc-button ${argsToTemplate(buttonArgs)}>
-        ${text}
+        ${buttonArgs['loading'] ? '' : text}
         </hc-button>
       `,
   }),
@@ -29,6 +29,13 @@ type Story = StoryObj<HcButtonComponent>;
 export const Primary: Story = {
   args: {
     style: 's-solid',
+  },
+};
+export const PrimaryDots: Story = {
+  args: {
+    style: 's-solid',
+    size: 'w-stretch',
+    loading: true,
   },
 };
 

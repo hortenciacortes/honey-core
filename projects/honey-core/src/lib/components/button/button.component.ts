@@ -20,19 +20,13 @@ export class HcButtonComponent {
   @Input()
   size?: 'h-small' | 'w-stretch' | null = null;
 
-  /**
-   * Button contents
-   *
-   * @required
-   */
-  @Input()
-  label = 'Button';
-
-  /**
-   * Disabled state of the button
-   */
+  /**  Disabled state of the button */
   @Input()
   disabled = false;
+
+  /**  Whether the button is in a loading state */
+  @Input()
+  loading = false;
 
   /** Optional click handler */
   @Output()

@@ -1,7 +1,8 @@
 <button
   type="button"
   [class]="classes"
-  [disabled]="disabled"
+  [class.loading]="loading"
+  [disabled]="loading ? true : disabled"
   (click)="onClick.emit($event)"
 >
   <ng-content />

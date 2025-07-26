@@ -16,7 +16,7 @@ const meta: Meta<ButtonInputsAndCustomArgs> = {
     props: buttonArgs,
     template: `
         <hc-button ${argsToTemplate(buttonArgs)}>
-        ${buttonArgs['loading'] ? '' : text}
+        ${text}
         </hc-button>
       `,
   }),

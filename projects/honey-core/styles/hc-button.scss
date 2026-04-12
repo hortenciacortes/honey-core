@@ -1,6 +1,6 @@
-$hcButtonBorderRadius  : 12px !default;
+$hcButtonBorderRadius  : 14px !default;
 $hcButtonFontSize      : 14px !default;
-$hcButtonFontWeight    : normal !default;
+$hcButtonFontWeight    : 600 !default;
 $hcButtonPadding       : 24px !default;
 
 /**
@@ -36,8 +36,9 @@ $hcButtonPadding       : 24px !default;
 %hc-button {
   --color-button        : var(--color);
   --color-button-hover  : var(--hover-color);
+  --color-button-active : var(--hover-color);
   --width               : fit-content;
-  --height              : 36px;
+  --height              : 42px;
   --h-padding           : #{$hcButtonPadding};
 
   @include flex(center);
@@ -51,11 +52,19 @@ $hcButtonPadding       : 24px !default;
   outline               : none;
   border                : 1px solid transparent;
   border-radius         : $hcButtonBorderRadius;
-  transition            : background .2s, color .2s, box-shadow .2s;
+  letter-spacing        : 0.01em;
+  transform             : translateY(0);
+  transition            : background .22s ease, color .22s ease, border-color .22s ease, box-shadow .22s ease, transform .16s ease, filter .2s ease;
   cursor                : pointer;
+
+  &:not(:disabled):focus-visible {
+    box-shadow          : 0 0 0 3px hsla(var(--hc-primary-500-hsl, var(--shc-primary-500-hsl)), 0.24);
+  }
 
   &:disabled {
     @include colorButton(var(--hc-disabled-text, var(--shc-disabled-text)), var(--hc-disabled-bg, var(--shc-disabled-bg)), var(--hc-disabled-bg, var(--shc-disabled-bg)));
+    box-shadow          : none;
+    opacity             : 0.72;
     cursor              : not-allowed;
   }
 }
@@ -72,12 +81,14 @@ $hcButtonPadding       : 24px !default;
   &.c-primary {
     --color-button        : var(--hc-background-primary, var(--shc-background-primary));
     --color-button-hover  : var(--hc-background-primary-hover, var(--shc-background-primary-hover));
+    --color-button-active : var(--hc-primary-700, var(--shc-primary-700));
   }
 
   &.c-secondary {
     color                 : var(--hc-brown-600, var(--shc-brown-600)) !important;
     --color-button        : var(--hc-background-secondary, var(--shc-background-secondary));
     --color-button-hover  : var(--hc-background-secondary-hover, var(--shc-background-secondary-hover));
+    --color-button-active : var(--hc-secondary-700, var(--shc-secondary-700));
   }
 }
 
@@ -88,9 +99,22 @@ $hcButtonPadding       : 24px !default;
 .hc-button.s-solid {
   @extend %hc-button;
   @include colorButton(var(--hc-background-main, var(--shc-background-main)), var(--color-button), transparent);
+  background-image      : linear-gradient(180deg, color-mix(in srgb, var(--color-button) 86%, white), var(--color-button));
+  box-shadow            : 0 12px 24px -16px hsla(var(--hc-primary-500-hsl, var(--shc-primary-500-hsl)), 0.72), 0 2px 4px rgba(0, 0, 0, 0.18);
 
   &:not(:disabled):hover {
     background          : var(--color-button-hover);
+    background-image    : linear-gradient(180deg, color-mix(in srgb, var(--color-button-hover) 90%, white), var(--color-button-hover));
+    transform           : translateY(-1px);
+    box-shadow          : 0 14px 24px -16px hsla(var(--hc-primary-500-hsl, var(--shc-primary-500-hsl)), 0.75), 0 6px 10px -8px rgba(0, 0, 0, 0.4);
+  }
+
+  &:not(:disabled):active {
+    background          : var(--color-button-active);
+    background-image    : none;
+    transform           : translateY(0);
+    box-shadow          : 0 4px 10px -8px rgba(0, 0, 0, 0.5);
+    filter              : saturate(1.08);
   }
 }
 
@@ -100,9 +124,17 @@ $hcButtonPadding       : 24px !default;
 .hc-button.s-hollow {
   @extend %hc-button;
   @include colorButton(var(--color-button), transparent, var(--color-button));
+  border-width          : 1.5px;
+  backdrop-filter       : saturate(1.1);
 
   &:not(:disabled):hover {
     @include colorButton(var(--hc-background-main, var(--shc-background-main)), var(--color-button), transparent);
+    transform           : translateY(-1px);
+  }
+
+  &:not(:disabled):active {
+    @include colorButton(var(--hc-background-main, var(--shc-background-main)), var(--color-button-active), transparent);
+    transform           : translateY(0);
   }
 
   &:disabled {
@@ -123,6 +155,12 @@ $hcButtonPadding       : 24px !default;
 
   &:not(:disabled):hover {
     @include colorButton(var(--color-button-hover), transparent, transparent);
+    background          : color-mix(in srgb, var(--color-button) 12%, transparent);
+  }
+
+  &:not(:disabled):active {
+    @include colorButton(var(--color-button-active), transparent, transparent);
+    background          : color-mix(in srgb, var(--color-button) 20%, transparent);
   }
 
   &:disabled {
@@ -139,7 +177,7 @@ $hcButtonPadding       : 24px !default;
   }
 
   &.h-small {
-    --height            : 32px;
+    --height            : 36px;
     --h-padding         : 16px;
     font-size           : 12px;
   }
@@ -159,7 +197,7 @@ $hcButtonPadding       : 24px !default;
     }
   }
 
-  .hc-primary {
+  .c-primary {
     &:disabled {
       @include colorButton(hsla(var(--hc-primary-400-hsl), 0.5), transparent, hsla(var(--hc-primary-400-hsl), 0.5));
     }

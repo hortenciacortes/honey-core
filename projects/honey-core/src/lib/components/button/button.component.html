@@ -6,6 +6,8 @@
   (click)="onClick.emit($event)"
 >
   @if (!loading) {
+    <span class="hc-button__label">
     <ng-content />
+    </span>
   }
 </button>

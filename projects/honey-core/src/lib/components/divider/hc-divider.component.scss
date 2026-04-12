@@ -1,0 +1,46 @@
+.hc-divider {
+  --hc-divider-color: color-mix(in srgb, var(--hc-text-light, var(--shc-text-light)) 26%, transparent);
+
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  width: 100%;
+  color: var(--hc-text-light, var(--shc-text-light));
+
+  &.hc-divider--inset {
+    width: calc(100% - 1.5rem);
+    margin-inline: 0.75rem;
+  }
+
+  &.hc-divider--vertical {
+    display: inline-flex;
+    width: auto;
+    min-width: 1px;
+    height: 100%;
+    min-height: 2.5rem;
+  }
+}
+
+.hc-divider__line {
+  display: block;
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 1px;
+  background: var(--hc-divider-color);
+
+  .hc-divider--vertical & {
+    width: 1px;
+    min-width: 1px;
+    height: 100%;
+  }
+}
+
+.hc-divider__label {
+  flex: 0 0 auto;
+  font-family: var(--hc-font-family, 'DM Sans', 'Nunito Sans', 'Segoe UI', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}

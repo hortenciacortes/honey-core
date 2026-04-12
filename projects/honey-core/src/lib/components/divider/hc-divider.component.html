@@ -1,0 +1,9 @@
+<div [class]="classes" aria-hidden="true">
+  @if (orientation === 'horizontal' && label) {
+    <span class="hc-divider__line"></span>
+    <span class="hc-divider__label">{{ label }}</span>
+    <span class="hc-divider__line"></span>
+  } @else {
+    <span class="hc-divider__line"></span>
+  }
+</div>

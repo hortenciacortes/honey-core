@@ -1,0 +1,67 @@
+.hc-badge {
+  --hc-badge-bg: color-mix(in srgb, var(--hc-primary-500, var(--shc-primary-500)) 16%, white);
+  --hc-badge-color: var(--hc-primary-700, var(--shc-primary-700));
+  --hc-badge-border: color-mix(in srgb, var(--hc-primary-500, var(--shc-primary-500)) 24%, transparent);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  width: fit-content;
+  border: 1px solid var(--hc-badge-border);
+  border-radius: 999px;
+  background: var(--hc-badge-bg);
+  color: var(--hc-badge-color);
+  font-family: var(--hc-font-family, 'DM Sans', 'Nunito Sans', 'Segoe UI', sans-serif);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+
+  &.hc-badge--sm {
+    min-height: 1.35rem;
+    padding: 0.05rem 0.5rem;
+    font-size: 0.68rem;
+  }
+
+  &.hc-badge--md {
+    min-height: 1.7rem;
+    padding: 0.16rem 0.72rem;
+    font-size: 0.76rem;
+  }
+
+  &.hc-badge--solid {
+    background: var(--hc-badge-color);
+    border-color: var(--hc-badge-color);
+    color: var(--hc-text-white, var(--shc-text-white));
+  }
+
+  &.hc-badge--primary {
+    --hc-badge-bg: color-mix(in srgb, var(--hc-primary-500, var(--shc-primary-500)) 16%, white);
+    --hc-badge-color: var(--hc-primary-700, var(--shc-primary-700));
+    --hc-badge-border: color-mix(in srgb, var(--hc-primary-500, var(--shc-primary-500)) 24%, transparent);
+  }
+
+  &.hc-badge--secondary {
+    --hc-badge-bg: color-mix(in srgb, var(--hc-secondary-500, var(--shc-secondary-500)) 18%, white);
+    --hc-badge-color: var(--hc-brown-600, var(--shc-brown-600));
+    --hc-badge-border: color-mix(in srgb, var(--hc-secondary-600, var(--shc-secondary-600)) 28%, transparent);
+  }
+
+  &.hc-badge--neutral {
+    --hc-badge-bg: color-mix(in srgb, var(--hc-text-light, var(--shc-text-light)) 16%, white);
+    --hc-badge-color: var(--hc-text-strong, var(--shc-text-strong));
+    --hc-badge-border: color-mix(in srgb, var(--hc-text-light, var(--shc-text-light)) 28%, transparent);
+  }
+
+  &.hc-badge--success {
+    --hc-badge-bg: color-mix(in srgb, #2f9e44 14%, white);
+    --hc-badge-color: #1f7a32;
+    --hc-badge-border: color-mix(in srgb, #2f9e44 28%, transparent);
+  }
+
+  &.hc-badge--warning {
+    --hc-badge-bg: color-mix(in srgb, #c76b00 14%, white);
+    --hc-badge-color: #9c5400;
+    --hc-badge-border: color-mix(in srgb, #c76b00 28%, transparent);
+  }
+}

@@ -10,7 +10,7 @@ button {
       content     : "...";
       position    : absolute;
       top         : -10px;
-      color       : var(--hc-text-white);
+      color       : var(--hc-text-white, var(--shc-text-white));
       font-size   : 32px;
       animation   : dotAnimation 1.5s infinite steps(4);
     }

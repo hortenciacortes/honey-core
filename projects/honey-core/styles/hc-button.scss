@@ -13,7 +13,7 @@ $hcButtonPadding       : 24px !default;
 }
 
 /**
- * 
+ *
  */
 @mixin hcTypography($size, $color, $weight: normal) {
   font-size             : $size;
@@ -22,7 +22,7 @@ $hcButtonPadding       : 24px !default;
 }
 
 /**
- * 
+ *
  */
 @mixin flex($justify, $align: center) {
   display               : flex;
@@ -55,7 +55,7 @@ $hcButtonPadding       : 24px !default;
   cursor                : pointer;
 
   &:disabled {
-    @include colorButton(var(--hc-disabled-text), var(--hc-disabled-bg), var(--hc-disabled-bg));
+    @include colorButton(var(--hc-disabled-text, var(--shc-disabled-text)), var(--hc-disabled-bg, var(--shc-disabled-bg)), var(--hc-disabled-bg, var(--shc-disabled-bg)));
     cursor              : not-allowed;
   }
 }
@@ -65,19 +65,19 @@ $hcButtonPadding       : 24px !default;
  */
 .hc-button {
   &.c-initial {
-    --color-button        : var(--hc-text-strong);
-    --color-button-hover  : var(--hc-text-strong);
+    --color-button        : var(--hc-text-strong, var(--shc-text-strong));
+    --color-button-hover  : var(--hc-text-strong, var(--shc-text-strong));
   }
 
   &.c-primary {
-    --color-button        : var(--hc-background-primary);
-    --color-button-hover  : var(--hc-background-primary-hover);
+    --color-button        : var(--hc-background-primary, var(--shc-background-primary));
+    --color-button-hover  : var(--hc-background-primary-hover, var(--shc-background-primary-hover));
   }
 
   &.c-secondary {
-    color                 : var(--hc-brown-600) !important;
-    --color-button        : var(--hc-background-secondary);
-    --color-button-hover    : var(--hc-background-secondary-hover);
+    color                 : var(--hc-brown-600, var(--shc-brown-600)) !important;
+    --color-button        : var(--hc-background-secondary, var(--shc-background-secondary));
+    --color-button-hover  : var(--hc-background-secondary-hover, var(--shc-background-secondary-hover));
   }
 }
 
@@ -87,7 +87,7 @@ $hcButtonPadding       : 24px !default;
  */
 .hc-button.s-solid {
   @extend %hc-button;
-  @include colorButton(var(--hc-background-main), var(--color-button), transparent);
+  @include colorButton(var(--hc-background-main, var(--shc-background-main)), var(--color-button), transparent);
 
   &:not(:disabled):hover {
     background          : var(--color-button-hover);
@@ -102,12 +102,12 @@ $hcButtonPadding       : 24px !default;
   @include colorButton(var(--color-button), transparent, var(--color-button));
 
   &:not(:disabled):hover {
-    @include colorButton(var(--hc-background-main), var(--color-button), transparent);
+    @include colorButton(var(--hc-background-main, var(--shc-background-main)), var(--color-button), transparent);
   }
 
   &:disabled {
     background          : transparent;
-    color               : var(--cds-text-light)
+    color               : var(--hc-text-light, var(--shc-text-light));
   }
 }
 
@@ -126,7 +126,7 @@ $hcButtonPadding       : 24px !default;
   }
 
   &:disabled {
-    @include colorButton(var(--hc-button-disabled-foreground), transparent, transparent);
+    @include colorButton(var(--hc-button-disabled-foreground, var(--shc-text-light)), transparent, transparent);
   }
 }
 
@@ -152,16 +152,16 @@ $hcButtonPadding       : 24px !default;
 /**
  * Overwrite buttons style on dark mode
  */
-:root body[cds-theme='dark'] {
+:root body[hc-theme='dark'] {
   .s-solid {
     &:disabled {
-      background        : hsla(var(--cds-primary-500-hsl), 0.5);
+      background        : hsla(var(--hc-primary-500-hsl), 0.5);
     }
   }
 
   .hc-primary {
     &:disabled {
-      @include colorButton(hsla(var(--cds-primary-400-hsl), 0.5), transparent, hsla(var(--cds-primary-400-hsl), 0.5));
+      @include colorButton(hsla(var(--hc-primary-400-hsl), 0.5), transparent, hsla(var(--hc-primary-400-hsl), 0.5));
     }
   }
 

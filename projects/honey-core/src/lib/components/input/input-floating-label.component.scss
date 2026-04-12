@@ -13,14 +13,14 @@
 
     &:focus {
       outline: none;
-      border-color: var(--hc-primary-500);
+      border-color: var(--hc-primary-500, var(--shc-primary-500));
     }
 
     &:focus + label,
     &:not(:placeholder-shown) + label {
       transform: translateY(-1rem);
       font-size: 0.75rem;
-      color: var(--hc-primary-500);
+      color: var(--hc-primary-500, var(--shc-primary-500));
     }
   }
 

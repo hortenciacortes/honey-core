@@ -44,3 +44,4 @@ testem.log
 Thumbs.db
 
 *storybook.log
+storybook-static/

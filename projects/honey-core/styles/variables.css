@@ -1,4 +1,6 @@
 :root {
+    --shc-font-family                : 'DM Sans', 'Nunito Sans', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+
     --shc-primary-500                : #FF7A00;
     --shc-primary-600                : #E86B00;
     --shc-primary-700                : #CC5D00;
@@ -31,6 +33,7 @@
     --hc-text-strong                 : var(--shc-text-strong);
     --hc-text-light                  : var(--shc-text-light);
     --hc-text-white                  : var(--shc-text-white);
+    --hc-font-family                 : var(--shc-font-family);
 
     --hc-background-main             : var(--shc-background-main);
     --hc-disabled-bg                 : var(--shc-disabled-bg);

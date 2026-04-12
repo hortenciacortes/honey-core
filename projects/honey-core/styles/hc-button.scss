@@ -43,6 +43,7 @@ $hcButtonPadding       : 24px !default;
 
   @include flex(center);
   @include hcTypography($hcButtonFontSize, var(--color-button), $hcButtonFontWeight);
+  font-family           : var(--hc-font-family, 'DM Sans', 'Nunito Sans', 'Segoe UI', sans-serif);
   gap                   : 8px;
   box-sizing            : border-box;
   width                 : var(--width);

@@ -1,12 +1,11 @@
 {
   "name": "@hmscodes/honey-core",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "build:lib": "ng build honey-core",
-    "publish:lib": "npm run build:lib && cd dist/honey-core && npm publish --access public",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "storybook": "ng run honey-core:storybook",

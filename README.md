@@ -1,59 +1,79 @@
-# HoneyCore
+# Honey Core
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.4.
+Biblioteca Angular de componentes e utilitários para o design system da Honey.
 
-## Development server
+## Requisitos
 
-To start a local development server, run:
+- Node.js e npm instalados
+- Angular CLI compatível com o projeto
 
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Instalação
 
 ```bash
-ng generate component component-name
+npm install
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Desenvolvimento
+
+Para subir a aplicação local:
 
 ```bash
-ng generate --help
+npm start
 ```
 
-## Building
+## Storybook
 
-To build the project run:
+Para rodar o Storybook em desenvolvimento:
 
 ```bash
-ng build
+npm run storybook
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Para gerar o build estático do Storybook:
 
 ```bash
-ng test
+npm run build-storybook
 ```
 
-## Running end-to-end tests
+## Build da biblioteca
 
-For end-to-end (e2e) testing, run:
+Para gerar o pacote da lib em `dist/honey-core`:
 
 ```bash
-ng e2e
+npm run build:lib
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Testes
 
-## Additional Resources
+Para executar os testes unitários:
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+npm test
+```
+
+## Publicação no npm
+
+Antes de publicar, atualize manualmente a versão nos dois arquivos abaixo:
+
+- `package.json`
+- `projects/honey-core/package.json`
+
+Os dois arquivos devem ficar com a mesma versão antes da publicação.
+
+### Criar o token no npm
+
+O token de publicação deve ser criado na sua conta do npm.
+
+Ao gerar o token, selecione a opção:
+
+- `Bypass two-factor`
+
+### Fluxo de publicação
+
+1. Atualize manualmente a versão em `package.json` e `projects/honey-core/package.json`.
+
+2. Publique no npm com o token criado no portal do npm:
+
+```bash
+npm publish --access public --//registry.npmjs.org/:_authToken=SEUTOKEN
+```

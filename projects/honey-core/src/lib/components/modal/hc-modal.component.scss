@@ -1,0 +1,111 @@
+.hc-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: color-mix(in srgb, var(--hc-text-strong, var(--shc-text-strong)) 48%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+.hc-modal {
+  width: min(100%, 36rem);
+  max-height: min(100%, 42rem);
+  overflow: auto;
+  border-radius: 1.25rem;
+  background: var(--hc-text-white, var(--shc-text-white));
+  color: var(--hc-text-strong, var(--shc-text-strong));
+  box-shadow: 0 28px 70px -30px color-mix(in srgb, var(--hc-text-strong, var(--shc-text-strong)) 48%, transparent);
+  font-family: var(--hc-font-family, 'DM Sans', 'Nunito Sans', 'Segoe UI', sans-serif);
+
+  &.hc-modal--sm {
+    width: min(100%, 28rem);
+  }
+
+  &.hc-modal--md {
+    width: min(100%, 36rem);
+  }
+
+  &.hc-modal--lg {
+    width: min(100%, 48rem);
+  }
+}
+
+.hc-modal__header,
+.hc-modal__body,
+.hc-modal__footer {
+  padding-inline: 1.2rem;
+}
+
+.hc-modal__header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.2rem;
+}
+
+.hc-modal__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.hc-modal__title {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+
+.hc-modal__description {
+  margin: 0;
+  color: var(--hc-text-light, var(--shc-text-light));
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.hc-modal__close {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--hc-text-light, var(--shc-text-light));
+  cursor: pointer;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.hc-modal__body {
+  padding-top: 0.9rem;
+  padding-bottom: 1rem;
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+.hc-modal__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding-top: 0.9rem;
+  padding-bottom: 1.2rem;
+  border-top: 1px solid color-mix(in srgb, var(--hc-text-light, var(--shc-text-light)) 14%, transparent);
+}
+
+.hc-modal__footer:empty {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .hc-modal__header,
+  .hc-modal__body,
+  .hc-modal__footer {
+    padding-inline: 1rem;
+  }
+
+  .hc-modal__footer {
+    justify-content: stretch;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

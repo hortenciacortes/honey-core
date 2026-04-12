@@ -1,0 +1,86 @@
+.hc-card {
+  --hc-card-bg: var(--hc-text-white, var(--shc-text-white));
+  --hc-card-border: color-mix(in srgb, var(--hc-text-light, var(--shc-text-light)) 16%, transparent);
+  --hc-card-shadow: 0 18px 40px -28px color-mix(in srgb, var(--hc-text-strong, var(--shc-text-strong)) 26%, transparent);
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 1rem;
+  background: var(--hc-card-bg);
+  color: var(--hc-text-strong, var(--shc-text-strong));
+  border: 1px solid transparent;
+  box-shadow: var(--hc-card-shadow);
+  font-family: var(--hc-font-family, 'DM Sans', 'Nunito Sans', 'Segoe UI', sans-serif);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+
+  &.hc-card--sm {
+    padding: 0.9rem;
+  }
+
+  &.hc-card--md {
+    padding: 1.15rem;
+  }
+
+  &.hc-card--lg {
+    padding: 1.5rem;
+  }
+
+  &.hc-card--muted {
+    --hc-card-bg: color-mix(in srgb, var(--hc-background-main, var(--shc-background-main)) 72%, white);
+  }
+
+  &.hc-card--accent {
+    --hc-card-bg: linear-gradient(180deg, color-mix(in srgb, var(--hc-secondary-500, var(--shc-secondary-500)) 18%, white), white 72%);
+  }
+
+  &.hc-card--outlined {
+    border-color: var(--hc-card-border);
+    box-shadow: none;
+  }
+
+  &.hc-card--interactive {
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 42px -28px color-mix(in srgb, var(--hc-primary-500, var(--shc-primary-500)) 34%, transparent);
+      border-color: color-mix(in srgb, var(--hc-primary-500, var(--shc-primary-500)) 22%, transparent);
+    }
+  }
+}
+
+.hc-card__header,
+.hc-card__body,
+.hc-card__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.hc-card__header:empty,
+.hc-card__footer:empty {
+  display: none;
+}
+
+.hc-card__title {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.hc-card__subtitle {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.4;
+  color: var(--hc-text-light, var(--shc-text-light));
+}
+
+.hc-card__body {
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+.hc-card__footer {
+  padding-top: 0.15rem;
+}

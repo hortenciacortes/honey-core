@@ -1,0 +1,9 @@
+<span [class]="classes" [attr.tabindex]="tabIndex">
+  <span class="hc-tooltip__trigger">
+    <ng-content />
+  </span>
+
+  <span class="hc-tooltip__bubble" [style.max-width]="maxWidth" role="tooltip">
+    {{ text }}
+  </span>
+</span>

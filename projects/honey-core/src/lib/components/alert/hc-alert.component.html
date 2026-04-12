@@ -1,0 +1,27 @@
+<section [class]="classes" role="status" aria-live="polite">
+  <span class="hc-alert__icon" aria-hidden="true"></span>
+
+  <div class="hc-alert__content">
+    @if (title) {
+      <strong class="hc-alert__title">{{ title }}</strong>
+    }
+
+    @if (message) {
+      <span class="hc-alert__message">{{ message }}</span>
+    }
+
+    <ng-content />
+  </div>
+
+  @if (actionLabel) {
+    <button class="hc-alert__action" type="button" (click)="action.emit()">
+      {{ actionLabel }}
+    </button>
+  }
+
+  @if (dismissible) {
+    <button class="hc-alert__close" type="button" aria-label="Fechar alerta" (click)="dismissed.emit()">
+      ×
+    </button>
+  }
+</section>

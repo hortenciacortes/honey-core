@@ -52,7 +52,10 @@
             "configDir": "projects/honey-core/.storybook",
             "browserTarget": "honey-core:build",
             "compodoc": false,
-            "outputDir": "storybook-static"
+            "outputDir": "storybook-static",
+            "styles": [
+              "projects/honey-core/styles/variables.css"
+            ]
           }
         }
       }
